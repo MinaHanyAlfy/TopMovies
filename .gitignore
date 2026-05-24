@@ -14,3 +14,6 @@ Pods/
 
 # macOS
 .DS_Store
+
+# Now, I should remove the Secrets file, but I want you to review it.
+# Secrets.plist

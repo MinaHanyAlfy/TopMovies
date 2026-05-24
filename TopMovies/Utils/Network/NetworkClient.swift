@@ -52,18 +52,31 @@ class NetworkClient: NetworkClientProtocol {
     }
 
     // MARK: - Private Helpers
-    
-    private func buildURL(for endpoint: Endpoint) -> URL? {
-        let components = URLComponents(string: endpoint.basePath + endpoint.path)
+    private func buildURL(
+        for endpoint: Endpoint
+    ) -> URL? {
+
+        var components = URLComponents(
+            string: endpoint.basePath
+        )
+
+        components?.path = endpoint.path
+        components?.queryItems = endpoint.defaultQueryItems + (
+            endpoint.queryItems.isEmpty
+            ? []
+            : endpoint.queryItems
+            )
+
         return components?.url
     }
     
     private func createURLRequest(for endpoint: Endpoint, with url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(Configuration.apiToken)", forHTTPHeaderField: "Authorization")
         if let bodyParameters = endpoint.bodyParameters {
             request.httpBody = bodyParameters
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         }
         return request
     }
