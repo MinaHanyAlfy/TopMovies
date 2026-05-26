@@ -9,9 +9,7 @@ import XCTest
 @testable import TopMovies
 
 final class MovieMapperTests: XCTestCase {
-
     func test_movieDTO_toEntity() {
-
         let dto = MovieDTO(
             adult: true,
             backdropPath: nil,

@@ -8,12 +8,8 @@
 import XCTest
 @testable import TopMovies
 
-final class ImageRepositoryImplTests:
-    XCTestCase {
-
-    func test_fetchImage_returnsData()
-    async throws {
-
+final class ImageRepositoryImplTests: XCTestCase {
+    func test_fetchImage_returnsData() async throws {
         let mockClient =
             MockNetworkClient()
 

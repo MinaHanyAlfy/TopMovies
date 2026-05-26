@@ -9,9 +9,7 @@ import XCTest
 @testable import TopMovies
 
 final class PageResponseTests: XCTestCase {
-
     func test_decodePageResponse() throws {
-
         let json = """
         {
             "page": 1,

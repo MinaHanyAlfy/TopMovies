@@ -9,9 +9,7 @@ import XCTest
 @testable import TopMovies
 
 final class MovieDetailsDTOTests: XCTestCase {
-    
     func test_decodeMovieDetailsDTO() throws {
-        
         let json = """
                {
                    "id": 550,

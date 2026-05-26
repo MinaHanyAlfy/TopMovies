@@ -8,7 +8,6 @@
 import Foundation
 
 final class MoviesRepositoryImpl: MoviesRepository {
-
     private let networkClient: NetworkClientProtocol
 
     init(networkClient: NetworkClientProtocol) {
@@ -42,9 +41,7 @@ final class MoviesRepositoryImpl: MoviesRepository {
         return response.results.map { $0.toEntity() }
     }
 
-    func fetchMovieDetails(
-        movieId: Int
-    ) async throws -> MovieDetailsEntity {
+    func fetchMovieDetails(movieId: Int) async throws -> MovieDetailsEntity {
         let dto: MovieDetailsDTO =
             try await networkClient.request(
                 endpoint: MoviesEndPoint.movieDetails(movieId: movieId)

@@ -8,7 +8,6 @@
 import Foundation
 
 final class ImageRepositoryImpl: ImageRepository {
-
     private let networkClient: NetworkClientProtocol
 
     init(networkClient: NetworkClientProtocol) {

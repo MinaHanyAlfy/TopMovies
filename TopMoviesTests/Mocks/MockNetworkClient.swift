@@ -9,7 +9,6 @@ import Foundation
 @testable import TopMovies
 
 final class MockNetworkClient: NetworkClientProtocol {
-
     var mockResponse: Any?
     var shouldThrowError = false
 
