@@ -34,14 +34,15 @@ struct MovieDTO: Decodable {
 }
 
 extension MovieDTO {
-    func toEntity() -> MovieEntity {
+    func toEntity(_ category: MovieCategory) -> MovieEntity {
         MovieEntity(
             id: id,
             adult: adult ?? false,
             originalTitle: originalTitle ?? "",
             posterPath: posterPath ?? "",
             releaseDate: releaseDate ?? "",
-            title: title ?? ""
+            title: title ?? "",
+            category: category
         )
     }
 }

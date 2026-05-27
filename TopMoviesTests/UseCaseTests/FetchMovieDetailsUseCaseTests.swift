@@ -19,19 +19,10 @@ final class FetchMovieDetailsUseCaseTests: XCTestCase {
                 title: "Fight Club",
                 overview:
                     "Some overview",
-                posterPath:
-                    "/poster.jpg",
-                backdropPath:
-                    "/backdrop.jpg",
-                releaseDate:
-                    "1999",
                 runtime: 139,
-                genres:
-                    ["Drama"],
-                voteAverage:
-                    8.4,
-                tagline:
-                    "Mischief."
+                genres: ["Drama"],
+                posterPath: "/poster.jpg",
+                releaseDate: "1999"
             )
 
         let useCase =

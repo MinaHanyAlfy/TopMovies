@@ -27,7 +27,7 @@ final class MovieMapperTests: XCTestCase {
             voteCount: nil
         )
 
-        let entity = dto.toEntity()
+        let entity = dto.toEntity(.nowPlaying)
 
         XCTAssertEqual(entity.id, 1)
         XCTAssertEqual(entity.title, "Batman")

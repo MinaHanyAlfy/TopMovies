@@ -3,4 +3,98 @@
    uuid = "B7DF267B-576B-44CD-ABD3-DAE823FC4B1F"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6BC3B7C0-8079-46CA-97DA-9123AA42FBB8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Data/RepositoryImp/MoviesRepositoryImpl.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "fetchMovies(endpoint:category:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6BC3B7C0-8079-46CA-97DA-9123AA42FBB8 - 19dcf193b9be0c68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for TopMovies.MoviesRepositoryImpl.fetchMovies(endpoint: TopMovies.MoviesEndPoint, category: TopMovies.MovieCategory) async throws -&gt; Swift.Array&lt;TopMovies.MovieEntity&gt;"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Data/RepositoryImp/MoviesRepositoryImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55">
+               </Location>
+               <Location
+                  uuid = "6BC3B7C0-8079-46CA-97DA-9123AA42FBB8 - b52768be9eab9a6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for TopMovies.MoviesRepositoryImpl.fetchMovies(endpoint: TopMovies.MoviesEndPoint, category: TopMovies.MovieCategory) async throws -&gt; Swift.Array&lt;TopMovies.MovieEntity&gt;"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Data/RepositoryImp/MoviesRepositoryImpl.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "041209D1-46AB-487A-9A4B-CA4531435591"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMoviesTests/RepositoryTests/MoviesRepositoryImplTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "test_fetchMovieDetails_usesCache_whenRemoteFails()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "041209D1-46AB-487A-9A4B-CA4531435591 - 1e4f751ab34904b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopMoviesTests.MoviesRepositoryImplTests.test_fetchMovieDetails_usesCache_whenRemoteFails() async throws -&gt; ()"
+                  moduleName = "TopMoviesTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMoviesTests/RepositoryTests/MoviesRepositoryImplTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183">
+               </Location>
+               <Location
+                  uuid = "041209D1-46AB-487A-9A4B-CA4531435591 - bf42d327b55029fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for TopMoviesTests.MoviesRepositoryImplTests.test_fetchMovieDetails_usesCache_whenRemoteFails() async throws -&gt; ()"
+                  moduleName = "TopMoviesTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMoviesTests/RepositoryTests/MoviesRepositoryImplTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "183"
+                  endingLineNumber = "183">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

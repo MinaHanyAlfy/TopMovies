@@ -4,17 +4,37 @@
 //
 //  Created by Mina Hanna on 2026-05-24.
 //
+import Foundation
+import SwiftData
 
 // MARK: - MovieDetails
-struct MovieDetailsEntity {
-    let id: Int
-    let title: String
-    let overview: String
-    let posterPath: String?
-    let backdropPath: String?
-    let releaseDate: String?
-    let runtime: Int
-    let genres: [String]
-    let voteAverage: Double
-    let tagline: String?
+@Model
+final class MovieDetailsEntity {
+
+    @Attribute(.unique)
+    var id: Int
+
+    var title: String
+    var overview: String
+    var runtime: Int
+    var genres: [String]
+    var posterPath: String
+    var releaseDate: String
+    init(
+        id: Int,
+        title: String,
+        overview: String,
+        runtime: Int,
+        genres: [String],
+        posterPath: String,
+        releaseDate: String
+    ) {
+        self.id = id
+        self.title = title
+        self.overview = overview
+        self.runtime = runtime
+        self.genres = genres
+        self.posterPath = posterPath
+        self.releaseDate = releaseDate
+    }
 }

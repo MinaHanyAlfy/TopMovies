@@ -51,9 +51,6 @@ final class MovieDetailsMapperTests: XCTestCase {
         XCTAssertEqual(entity.runtime,
                        139)
 
-        XCTAssertEqual(entity.voteAverage,
-                       8.4)
-
         XCTAssertEqual(entity.genres,
                        ["Drama", "Action"])
     }

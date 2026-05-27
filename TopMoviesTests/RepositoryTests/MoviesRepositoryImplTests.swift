@@ -9,54 +9,64 @@ import XCTest
 @testable import TopMovies
 
 final class MoviesRepositoryImplTests: XCTestCase {
-    func test_fetchPopular_returnsMappedMovies() async throws {
-        let mockClient = MockNetworkClient()
+    private var network: MockNetworkClient!
+    private var localClient: MockMoviesLocalDataSource!
+    private var dataSource: MoviesRepositoryImpl!
+
+    override func setUp() {
+        network = MockNetworkClient()
+        localClient = MockMoviesLocalDataSource()
         
-        mockClient.mockResponse =
-        PageResponse<MovieDTO>(
-            results: [
-                MovieDTO(
-                    adult: false,
-                    backdropPath: nil,
-                    genreIDS: nil,
-                    id: 550,
-                    originalTitle: nil,
-                    overview: "Overview",
-                    originalLanguage: nil,
-                    popularity: nil,
-                    posterPath: "/poster.jpg",
-                    releaseDate: nil,
-                    title: "Fight Club",
-                    video: nil,
-                    voteAverage: 8.4,
-                    voteCount: nil
-                )
-            ],
+        dataSource = MoviesRepositoryImpl(
+            networkClient: network,
+            localClient: localClient
+        )
+    }
+
+    func test_fetchPopular_returnsRemoteMovies_andCachesThem() async throws {
+        let dto = MovieDTO(
+            adult: false,
+            backdropPath: nil,
+            genreIDS: nil,
+            id: 550,
+            originalTitle: nil,
+            overview: nil,
+            originalLanguage: nil,
+            popularity: nil,
+            posterPath: "/poster.jpg",
+            releaseDate: "2025",
+            title: "Fight Club",
+            video: nil,
+            voteAverage: nil,
+            voteCount: nil
+        )
+        
+        network.mockResponse = PageResponse<MovieDTO>(
+            results: [dto],
             page: 1,
-            totalPages: 10,
-            totalResults: 100,
+            totalPages: nil,
+            totalResults: nil,
             dates: nil
         )
         
-        let repository =
-        MoviesRepositoryImpl(
-            networkClient: mockClient
-        )
-        
-        let movies =
-        try await repository
-            .fetchPopular(page: 1)
-        
-        XCTAssertEqual(movies.count, 1)
+        let result = try await dataSource
+            .fetchPopular(
+                page: 1
+            )
         
         XCTAssertEqual(
-            movies.first?.id,
-            550
+            result.count,
+            1
         )
         
         XCTAssertEqual(
-            movies.first?.title,
+            result.first?.title,
             "Fight Club"
+        )
+        
+        XCTAssertEqual(
+            localClient.movies.count,
+            1
         )
     }
     
@@ -104,7 +114,8 @@ final class MoviesRepositoryImplTests: XCTestCase {
         
         let repository =
         MoviesRepositoryImpl(
-            networkClient: mockClient
+            networkClient: mockClient,
+            localClient: localClient
         )
         
 
@@ -132,13 +143,63 @@ final class MoviesRepositoryImplTests: XCTestCase {
         )
         
         XCTAssertEqual(
-            result.voteAverage,
-            8.4
-        )
-        
-        XCTAssertEqual(
             result.genres,
             ["Action", "Adventure"]
+        )
+    }
+    
+    ///Test fetch popular movies when network fails.
+    func test_fetchPopular_usesCache_whenRemoteFails() async throws {
+        network.shouldThrowError = true
+
+        localClient.movies = [
+            MovieEntity(
+                id: 1,
+                adult: false,
+                originalTitle: "Cached Movie",
+                posterPath: "",
+                releaseDate: "2022",
+                title: "Cached Movie",
+                category: .popular
+            )
+        ]
+
+        let result = try await dataSource
+            .fetchPopular(
+                page: 1
+            )
+
+        XCTAssertEqual(
+            result.count,
+            1
+        )
+
+        XCTAssertEqual(
+            result.first?.title,
+            "Cached Movie"
+        )
+    }
+    ///Test fetch Movie details when network fails.
+    func test_fetchMovieDetails_usesCache_whenRemoteFails() async throws {  network.shouldThrowError = true
+
+        localClient.movieDetails = MovieDetailsEntity(
+            id: 550,
+            title: "Cached Fight Club",
+            overview: "Cached",
+            runtime: 139,
+            genres: ["Drama"],
+            posterPath: "",
+            releaseDate: "2022"
+        )
+
+        let result = try await dataSource
+            .fetchMovieDetails(
+                movieId: 550
+            )
+
+        XCTAssertEqual(
+            result.title,
+            "Cached Fight Club"
         )
     }
 }

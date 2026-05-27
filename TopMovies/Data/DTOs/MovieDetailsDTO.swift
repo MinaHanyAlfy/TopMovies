@@ -111,13 +111,10 @@ extension MovieDetailsDTO {
             id: id ?? 0,
             title: title ?? "",
             overview: overview ?? "",
-            posterPath: posterPath,
-            backdropPath: backdropPath,
-            releaseDate: releaseDate,
             runtime: runtime ?? 0,
             genres: genres?.compactMap(\.name) ?? [],
-            voteAverage: voteAverage ?? 0,
-            tagline: tagline
+            posterPath: posterPath ?? "",
+            releaseDate: releaseDate ?? ""
         )
     }
 }

@@ -17,14 +17,11 @@ final class FetchNowPlayingUseCaseTests: XCTestCase {
             MovieEntity(
                 id: 550,
                 adult: false,
-                originalTitle:
-                    "Fight Club",
-                posterPath:
-                    "/poster.jpg",
-                releaseDate:
-                    "1999",
-                title:
-                    "Fight Club"
+                originalTitle: "Fight Club",
+                posterPath: "/poster.jpg",
+                releaseDate: "1999",
+                title: "Fight Club",
+                category: .nowPlaying
             )
         ]
 
