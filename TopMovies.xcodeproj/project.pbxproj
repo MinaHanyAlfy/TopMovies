@@ -30,24 +30,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7F1B24D12FC1EC2300B7EE66 /* Exceptions for "TopMovies" folder in "TopMovies" target */ = {
+		7F754F652FC753EE002D8C7B /* Exceptions for "TopMovies" folder in "TopMovies" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				TopMovies.xcdatamodeld,
 			);
 			target = 7F1B24A52FC1EC2100B7EE66 /* TopMovies */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		7F1B24A82FC1EC2100B7EE66 /* TopMovies */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				7F1B24D12FC1EC2300B7EE66 /* Exceptions for "TopMovies" folder in "TopMovies" target */,
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		7F754F662FC753EE002D8C7B /* Exceptions for "TopMovies" folder in "Compile Sources" phase from "TopMovies" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 7F1B24A22FC1EC2100B7EE66 /* Sources */;
+			membershipExceptions = (
+				TopMovies.xcdatamodeld,
 			);
-			path = TopMovies;
-			sourceTree = "<group>";
 		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
 		7F1B24C22FC1EC2300B7EE66 /* TopMoviesTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TopMoviesTests;
@@ -56,6 +59,15 @@
 		7F1B24CC2FC1EC2300B7EE66 /* TopMoviesUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TopMoviesUITests;
+			sourceTree = "<group>";
+		};
+		7F754F382FC753EE002D8C7B /* TopMovies */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7F754F652FC753EE002D8C7B /* Exceptions for "TopMovies" folder in "TopMovies" target */,
+				7F754F662FC753EE002D8C7B /* Exceptions for "TopMovies" folder in "Compile Sources" phase from "TopMovies" target */,
+			);
+			path = TopMovies;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,7 +100,7 @@
 		7F1B249D2FC1EC2100B7EE66 = {
 			isa = PBXGroup;
 			children = (
-				7F1B24A82FC1EC2100B7EE66 /* TopMovies */,
+				7F754F382FC753EE002D8C7B /* TopMovies */,
 				7F1B24C22FC1EC2300B7EE66 /* TopMoviesTests */,
 				7F1B24CC2FC1EC2300B7EE66 /* TopMoviesUITests */,
 				7F1B24A72FC1EC2100B7EE66 /* Products */,
@@ -121,7 +133,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				7F1B24A82FC1EC2100B7EE66 /* TopMovies */,
+				7F754F382FC753EE002D8C7B /* TopMovies */,
 			);
 			name = TopMovies;
 			packageProductDependencies = (

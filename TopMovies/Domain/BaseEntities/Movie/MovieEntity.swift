@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-final class MovieEntity {
+final class MovieEntity: Equatable, Identifiable {
 
     @Attribute(.unique)
     var id: Int
@@ -19,8 +19,12 @@ final class MovieEntity {
     var posterPath: String
     var releaseDate: String
     var title: String
-    var category: MovieCategory
-    
+    var categoryValue: String
+       
+    var category: MovieCategory {
+        get { MovieCategory(rawValue: categoryValue) ?? .nowPlaying }
+        set { categoryValue = newValue.rawValue }
+    }
     init(
         id: Int,
         adult: Bool,
@@ -36,12 +40,12 @@ final class MovieEntity {
         self.posterPath = posterPath
         self.releaseDate = releaseDate
         self.title = title
-        self.category = category
+        self.categoryValue = category.rawValue
     }
 }
 
-enum MovieCategory: String, Codable {
-    case nowPlaying
-    case popular
-    case upcoming
+enum MovieCategory: String, Codable, CaseIterable {
+    case nowPlaying = "Now Playing"
+    case popular = "Popular"
+    case upcoming = "Up Coming"
 }

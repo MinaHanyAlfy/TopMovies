@@ -34,12 +34,11 @@ final class MoviesLocalDataSourceImpl: MoviesLocalDataSource {
     
     func fetch(category: MovieCategory) throws -> [MovieEntity] {
         let descriptor = FetchDescriptor<MovieEntity>(
-            predicate:
-                #Predicate {
-                    $0.category == category
-                }
-        )
-        
+              predicate: #Predicate<MovieEntity> { model in
+                  // Compare the stored primitive string to our target string
+                  model.categoryValue == category.rawValue
+              }
+          )
         return try context.fetch(descriptor)
     }
     

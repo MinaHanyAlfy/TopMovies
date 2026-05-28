@@ -4,10 +4,12 @@
 //
 //  Created by Mina Hanna on 2026-05-25.
 //
+
 import Foundation
+import UIKit
 
 protocol DownloadImageUseCaseProtocol {
-    func execute(url: String) async throws -> Data
+    func execute(path: String) async throws -> UIImage
 }
 
 final class DownloadImageUseCase: DownloadImageUseCaseProtocol {
@@ -20,12 +22,8 @@ final class DownloadImageUseCase: DownloadImageUseCaseProtocol {
     }
 
     func execute(
-        url: String
-    ) async throws -> Data {
-
-        try await repository
-            .fetchImage(
-                from: url
-            )
+        path: String
+    ) async throws -> UIImage {
+        try await repository.fetchImage(from: path)
     }
 }
