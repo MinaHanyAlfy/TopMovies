@@ -30,7 +30,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7F1B24D12FC1EC2300B7EE66 /* Exceptions for "TopMovies" folder in "TopMovies" target */ = {
+		7F754F652FC753EE002D8C7B /* Exceptions for "TopMovies" folder in "TopMovies" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -40,14 +40,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		7F1B24A82FC1EC2100B7EE66 /* TopMovies */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				7F1B24D12FC1EC2300B7EE66 /* Exceptions for "TopMovies" folder in "TopMovies" target */,
-			);
-			path = TopMovies;
-			sourceTree = "<group>";
-		};
 		7F1B24C22FC1EC2300B7EE66 /* TopMoviesTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TopMoviesTests;
@@ -56,6 +48,14 @@
 		7F1B24CC2FC1EC2300B7EE66 /* TopMoviesUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TopMoviesUITests;
+			sourceTree = "<group>";
+		};
+		7F754F382FC753EE002D8C7B /* TopMovies */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				7F754F652FC753EE002D8C7B /* Exceptions for "TopMovies" folder in "TopMovies" target */,
+			);
+			path = TopMovies;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -88,7 +88,7 @@
 		7F1B249D2FC1EC2100B7EE66 = {
 			isa = PBXGroup;
 			children = (
-				7F1B24A82FC1EC2100B7EE66 /* TopMovies */,
+				7F754F382FC753EE002D8C7B /* TopMovies */,
 				7F1B24C22FC1EC2300B7EE66 /* TopMoviesTests */,
 				7F1B24CC2FC1EC2300B7EE66 /* TopMoviesUITests */,
 				7F1B24A72FC1EC2100B7EE66 /* Products */,
@@ -121,7 +121,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				7F1B24A82FC1EC2100B7EE66 /* TopMovies */,
+				7F754F382FC753EE002D8C7B /* TopMovies */,
 			);
 			name = TopMovies;
 			packageProductDependencies = (
@@ -308,7 +308,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -342,7 +342,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
