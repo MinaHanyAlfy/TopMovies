@@ -9,11 +9,10 @@ import UIKit
 
 final class AppCoordinator: @MainActor Coordinator {
 
-    let navigationController =
-        UINavigationController()
-
     private let container: DependencyContainer
-
+    private var childCoordinators:
+        [Coordinator] = []
+    
     init(
         container: DependencyContainer
     ) {
@@ -23,48 +22,47 @@ final class AppCoordinator: @MainActor Coordinator {
 
     @MainActor
     func start() {
-
-        let tabBar =
-            UITabBarController()
-
-        let nowPlaying =
-            MoviesCoordinator(
-                category:
-                    .nowPlaying,
-                container:
-                    container
-            )
-
-        let popular =
-            MoviesCoordinator(
-                category:
-                    .popular,
-                container:
-                    container
-            )
-
-        let upcoming =
-            MoviesCoordinator(
-                category:
-                    .upcoming,
-                container:
-                    container
-            )
-
+        
+        let tabBar = UITabBarController()
+        
+        let nowPlaying = MoviesCoordinator(
+            category: .nowPlaying,
+            container: container
+        )
+        
+        let popular = MoviesCoordinator(
+            category: .popular,
+            container: container
+        )
+        
+        let upcoming = MoviesCoordinator(
+            category: .upcoming,
+            container: container
+        )
+        
         nowPlaying.start()
         popular.start()
         upcoming.start()
-
+        
+        childCoordinators = [
+            nowPlaying,
+            popular,
+            upcoming
+        ]
+        
         tabBar.viewControllers = [
             nowPlaying.navigationController,
             popular.navigationController,
             upcoming.navigationController
         ]
-
-        navigationController
-            .setViewControllers(
-                [tabBar],
-                animated: false
-            )
+        
+        // IMPORTANT: tabBar is root now
+        UIApplication.shared
+            .connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first?
+            .windows
+            .first?
+            .rootViewController = tabBar
     }
 }

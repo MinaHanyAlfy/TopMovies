@@ -10,41 +10,30 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var appCoordinator: AppCoordinator?
 
-
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(
+        _ scene: UIScene,
+        willConnectTo session: UISceneSession,
+        options connectionOptions: UIScene.ConnectionOptions
+    ) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).        
-        guard let windowScene =
-                scene
-                as? UIWindowScene
-            else { return }
+        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        do {
 
-            let container =
-                DependencyContainer()
+            let container = try DependencyContainer()
 
-            let coordinator =
-                AppCoordinator(
-                    container:
-                        container
-                )
+            let coordinator = AppCoordinator(container: container)
+            self.appCoordinator = coordinator
 
             coordinator.start()
 
-            let window =
-                UIWindow(
-                    windowScene:
-                        windowScene
-                )
+        } catch {
 
-            window.rootViewController =
-                coordinator
-                    .navigationController
-
-            self.window = window
-
-            window.makeKeyAndVisible()
+            // 🚨 handle crash safely instead of silent corruption
+            print("❌ Failed to start app:", error)
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -78,6 +67,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
-
 }
-

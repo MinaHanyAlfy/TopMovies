@@ -8,53 +8,82 @@
 import SwiftData
 
 final class DependencyContainer {
-    lazy var networkClient = NetworkClient()
-    lazy var modelContainer = try! ModelContainerFactory.create()
-    
-    lazy var context = ModelContext(
-        modelContainer
-    )
 
-    lazy var localDataSource = MoviesLocalDataSourceImpl(
-        context: context
-    )
+    // MARK: - Core
+    let networkClient: NetworkClient
+    let modelContainer: ModelContainer
 
-    lazy var moviesRepository = MoviesRepositoryImpl(
-        networkClient: networkClient,
-        localClient: localDataSource
-    )
+    init() throws {
 
-    lazy var imageRepository = ImageRepositoryImpl(
-        networkClient: networkClient
-    )
+        self.networkClient = NetworkClient()
 
-    func makeFetchNowPlaying() -> FetchNowPlayingUseCase {
+        self.modelContainer =
+            try ModelContainerFactory.create()
+    }
+
+    // MARK: - Context (SAFE per access)
+    @MainActor
+    var context: ModelContext {
+        modelContainer.mainContext
+    }
+
+    // MARK: - DataSources
+    @MainActor
+    func makeLocalDataSource() -> MoviesLocalDataSourceImpl {
+        MoviesLocalDataSourceImpl(
+            context: context
+        )
+    }
+
+    // MARK: - Repositories
+    @MainActor
+    func makeMoviesRepository() -> MoviesRepositoryImpl {
+        MoviesRepositoryImpl(
+            networkClient: networkClient,
+            localClient: makeLocalDataSource()
+        )
+    }
+
+    func makeImageRepository() -> ImageRepositoryImpl {
+
+        ImageRepositoryImpl(
+            networkClient: networkClient
+        )
+    }
+
+    // MARK: - UseCases
+    @MainActor
+    func makeFetchNowPlaying() -> FetchNowPlayingUseCaseProtocol {
         FetchNowPlayingUseCase(
-            repository: moviesRepository
+            repository: makeMoviesRepository()
         )
     }
-    
-    func makeFetchPopular() -> FetchPopularMoviesUseCase {
+
+    @MainActor
+    func makeFetchPopular() -> FetchPopularMoviesUseCaseProtocol {
         FetchPopularMoviesUseCase(
-            repository: moviesRepository
+            repository: makeMoviesRepository()
         )
     }
     
-    func makeFetchUpComing() -> FetchUpcomingMoviesUseCase {
+    @MainActor
+    func makeFetchUpComing() -> FetchUpcomingMoviesUseCaseProtocol {
         FetchUpcomingMoviesUseCase(
-            repository: moviesRepository
+            repository: makeMoviesRepository()
         )
     }
-
-    func makeFetchDetails() -> FetchMovieDetailsUseCase {
+    
+    @MainActor
+    func makeFetchDetails() -> FetchMovieDetailsUseCaseProtocol {
         FetchMovieDetailsUseCase(
-            repository: moviesRepository
+            repository: makeMoviesRepository()
         )
     }
-
-    func makeDownloadImage() -> DownloadImageUseCase {
+    
+    @MainActor
+    func makeDownloadImage() -> DownloadImageUseCaseProtocol {
         DownloadImageUseCase(
-            repository: imageRepository
+            repository: makeImageRepository()
         )
     }
 }

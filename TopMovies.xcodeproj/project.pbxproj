@@ -34,21 +34,10 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
-				TopMovies.xcdatamodeld,
 			);
 			target = 7F1B24A52FC1EC2100B7EE66 /* TopMovies */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		7F754F662FC753EE002D8C7B /* Exceptions for "TopMovies" folder in "Compile Sources" phase from "TopMovies" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 7F1B24A22FC1EC2100B7EE66 /* Sources */;
-			membershipExceptions = (
-				TopMovies.xcdatamodeld,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		7F1B24C22FC1EC2300B7EE66 /* TopMoviesTests */ = {
@@ -65,7 +54,6 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				7F754F652FC753EE002D8C7B /* Exceptions for "TopMovies" folder in "TopMovies" target */,
-				7F754F662FC753EE002D8C7B /* Exceptions for "TopMovies" folder in "Compile Sources" phase from "TopMovies" target */,
 			);
 			path = TopMovies;
 			sourceTree = "<group>";

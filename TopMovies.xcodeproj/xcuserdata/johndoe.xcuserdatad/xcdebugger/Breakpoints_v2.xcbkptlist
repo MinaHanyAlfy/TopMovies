@@ -7,45 +7,61 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6BC3B7C0-8079-46CA-97DA-9123AA42FBB8"
+            uuid = "719CF8D7-303F-47AB-AB5E-F8ADE68192F1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TopMovies/Data/RepositoryImp/MoviesRepositoryImpl.swift"
+            filePath = "TopMovies/Presentation/MovieDetails/MovieDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "fetchMovies(endpoint:category:)"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E2A5727-C833-414A-95DF-0EB040AA7515"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "render(state:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6BC3B7C0-8079-46CA-97DA-9123AA42FBB8 - 19dcf193b9be0c68"
+                  uuid = "6E2A5727-C833-414A-95DF-0EB040AA7515 - f645288fdd92b5b8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for TopMovies.MoviesRepositoryImpl.fetchMovies(endpoint: TopMovies.MoviesEndPoint, category: TopMovies.MovieCategory) async throws -&gt; Swift.Array&lt;TopMovies.MovieEntity&gt;"
+                  symbolName = "TopMovies.MoviesViewController.render(state: TopMovies.ViewState) -&gt; ()"
                   moduleName = "TopMovies.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Data/RepositoryImp/MoviesRepositoryImpl.swift"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55">
+                  startingLineNumber = "292"
+                  endingLineNumber = "292">
                </Location>
                <Location
-                  uuid = "6BC3B7C0-8079-46CA-97DA-9123AA42FBB8 - b52768be9eab9a6f"
+                  uuid = "6E2A5727-C833-414A-95DF-0EB040AA7515 - f645288fdd92b5fa"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for TopMovies.MoviesRepositoryImpl.fetchMovies(endpoint: TopMovies.MoviesEndPoint, category: TopMovies.MovieCategory) async throws -&gt; Swift.Array&lt;TopMovies.MovieEntity&gt;"
+                  symbolName = "TopMovies.MoviesViewController.render(state: TopMovies.ViewState) -&gt; ()"
                   moduleName = "TopMovies.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Data/RepositoryImp/MoviesRepositoryImpl.swift"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55">
+                  startingLineNumber = "294"
+                  endingLineNumber = "294">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -53,47 +69,513 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "041209D1-46AB-487A-9A4B-CA4531435591"
+            uuid = "B79ADECE-98AF-4174-AE65-AD30D5F68C92"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TopMoviesTests/RepositoryTests/MoviesRepositoryImplTests.swift"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "test_fetchMovieDetails_usesCache_whenRemoteFails()"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "setupNetworkListener()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "041209D1-46AB-487A-9A4B-CA4531435591 - 1e4f751ab34904b6"
+                  uuid = "B79ADECE-98AF-4174-AE65-AD30D5F68C92 - fdaa95ebf366d6a0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TopMoviesTests.MoviesRepositoryImplTests.test_fetchMovieDetails_usesCache_whenRemoteFails() async throws -&gt; ()"
-                  moduleName = "TopMoviesTests"
+                  symbolName = "TopMovies.MoviesViewController.setupNetworkListener() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMoviesTests/RepositoryTests/MoviesRepositoryImplTests.swift"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "183"
-                  endingLineNumber = "183">
+                  startingLineNumber = "186"
+                  endingLineNumber = "186">
                </Location>
                <Location
-                  uuid = "041209D1-46AB-487A-9A4B-CA4531435591 - bf42d327b55029fb"
+                  uuid = "B79ADECE-98AF-4174-AE65-AD30D5F68C92 - 17095035fa76cc94"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for TopMoviesTests.MoviesRepositoryImplTests.test_fetchMovieDetails_usesCache_whenRemoteFails() async throws -&gt; ()"
-                  moduleName = "TopMoviesTests"
+                  symbolName = "closure #1 () -&gt; () in TopMovies.MoviesViewController.setupNetworkListener() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMoviesTests/RepositoryTests/MoviesRepositoryImplTests.swift"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "183"
-                  endingLineNumber = "183">
+                  startingLineNumber = "186"
+                  endingLineNumber = "186">
+               </Location>
+               <Location
+                  uuid = "B79ADECE-98AF-4174-AE65-AD30D5F68C92 - fdaa95ebf366d6fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopMovies.MoviesViewController.setupNetworkListener() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188">
+               </Location>
+               <Location
+                  uuid = "B79ADECE-98AF-4174-AE65-AD30D5F68C92 - 17095035fa76ccca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in TopMovies.MoviesViewController.setupNetworkListener() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB70F767-C7D6-4243-BAF7-17E986661749"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
+            landmarkName = "handleConnectionRestored()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB70F767-C7D6-4243-BAF7-17E986661749 - 3b7f55a62a7432c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopMovies.MoviesViewController.handleConnectionRestored() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193">
+               </Location>
+               <Location
+                  uuid = "AB70F767-C7D6-4243-BAF7-17E986661749 - 3b7f55a62a74320e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopMovies.MoviesViewController.handleConnectionRestored() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "195"
+                  endingLineNumber = "195">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D18A8E6-D2ED-43F2-BBC3-D3EA51F1BE76"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "fetchMovies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5D18A8E6-D2ED-43F2-BBC3-D3EA51F1BE76 - 5f9a284ddbfb4fa2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171">
+               </Location>
+               <Location
+                  uuid = "5D18A8E6-D2ED-43F2-BBC3-D3EA51F1BE76 - 2aeae0b500684112"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171">
+               </Location>
+               <Location
+                  uuid = "5D18A8E6-D2ED-43F2-BBC3-D3EA51F1BE76 - df5959597b3090f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171">
+               </Location>
+               <Location
+                  uuid = "5D18A8E6-D2ED-43F2-BBC3-D3EA51F1BE76 - 5f9a284ddbfb4fe0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173">
+               </Location>
+               <Location
+                  uuid = "5D18A8E6-D2ED-43F2-BBC3-D3EA51F1BE76 - 2aeae0b500684150"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173">
+               </Location>
+               <Location
+                  uuid = "5D18A8E6-D2ED-43F2-BBC3-D3EA51F1BE76 - df5959597b3090bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1450F8A-BAE1-4136-BD99-B9307B4175A1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "fetchMovies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A1450F8A-BAE1-4136-BD99-B9307B4175A1 - df5959597b309098"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172">
+               </Location>
+               <Location
+                  uuid = "A1450F8A-BAE1-4136-BD99-B9307B4175A1 - df5959597b30935a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "921399C2-A64C-47B5-82E5-A3D8BEE924D6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DE8BE72-48CC-4AAC-89D9-EFFC5D2DB034"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "loadMovies()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5708A388-343E-4394-8F48-CA4A2763D9CD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "handleConnectionRestored()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5708A388-343E-4394-8F48-CA4A2763D9CD - 6eb1b8c223ad3e42"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.handleConnectionRestored() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202">
+               </Location>
+               <Location
+                  uuid = "5708A388-343E-4394-8F48-CA4A2763D9CD - 3708063a7a76d552"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.handleConnectionRestored() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202">
+               </Location>
+               <Location
+                  uuid = "5708A388-343E-4394-8F48-CA4A2763D9CD - 6eb1b8c223ad3e3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.handleConnectionRestored() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204">
+               </Location>
+               <Location
+                  uuid = "5708A388-343E-4394-8F48-CA4A2763D9CD - 3708063a7a76d52c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.handleConnectionRestored() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "74218196-BB04-465E-AC99-396D7E9D3D95"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "fetchMovies()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "74218196-BB04-465E-AC99-396D7E9D3D95 - df5959597b30937d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175">
+               </Location>
+               <Location
+                  uuid = "74218196-BB04-465E-AC99-396D7E9D3D95 - da0f44dd7b0f6d5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175">
+               </Location>
+               <Location
+                  uuid = "74218196-BB04-465E-AC99-396D7E9D3D95 - df5959597b30933f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177">
+               </Location>
+               <Location
+                  uuid = "74218196-BB04-465E-AC99-396D7E9D3D95 - da0f44dd7b0f6d18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 () async -&gt; () in TopMovies.MoviesViewController.fetchMovies() -&gt; ()"
+                  moduleName = "TopMovies.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johndoe/Documents/iOS/TopMovies/TopMovies/Presentation/MoviesList/MoviesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "177"
+                  endingLineNumber = "177">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "998805CA-5DD5-404A-B60C-0674EEEFF503"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "fetchMovies(refresh:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24B62649-45E2-4C25-A7A8-4AC05FD4980C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "fetchMovies(refresh:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C20D6E6-BA05-49EF-A63B-D147A553BCED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "fetchMovies(refresh:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3888AB82-2DEA-4160-8F03-5B7BA1706E47"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TopMovies/Presentation/MoviesList/MoviesListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "fetchMovies(refresh:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

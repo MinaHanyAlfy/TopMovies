@@ -22,11 +22,12 @@ final class MoviesViewController: UIViewController {
         Set<AnyCancellable>()
 
     init(
-        viewModel: MoviesListViewModel
+        viewModel: MoviesListViewModel,
+        coordinator: MoviesCoordinator
     ) {
 
-        self.viewModel =
-            viewModel
+        self.viewModel = viewModel
+        self.coordinator = coordinator
 
         super.init(
             nibName:
@@ -49,43 +50,34 @@ final class MoviesViewController: UIViewController {
         configureZeroState()
         bindViewModel()
         loadingIndicatorConfig()
+        setupNetworkListener()
         fetchMovies()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if viewModel.movies.isEmpty {
+            Task {
+                await viewModel.fetchMovies(refresh: true)
+            }
+        }
     }
 }
 //MARK: - Binding
 extension MoviesViewController {
-    fileprivate func bindViewModel() {
-        viewModel
-            .$movies
+    private func bindViewModel() {
+        viewModel.$movies
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] _ in
-                self?.stopLoading()
+            .sink { [weak self] _ in
                 self?.tableView.reloadData()
-            })
-            .store(in: &cancellables)
-
-        viewModel.$isLoading
-            .receive(
-                on:
-                    DispatchQueue.main
-            )
-            .sink {
-                [weak self]
-                isLoading in
-
-                guard let self else {
-                    return
-                }
-
-                if isLoading {
-                    self.startLoading()
-                } else {
-                    self.stopLoading()
-                }
             }
-            .store(
-                in: &cancellables
-            )
+            .store(in: &cancellables)
+        
+        viewModel.$state
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] state in
+                self?.render(state: state)
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -118,17 +110,12 @@ extension MoviesViewController {
             refreshControl
     }
 
+    
     @objc
     func refreshTriggered() {
         Task {
-            try await viewModel
-                .fetchMovies(
-                    refresh: true
-                )
-
-            tableView.reloadData()
-            refreshControl
-                .endRefreshing()
+            await viewModel.fetchMovies(refresh: true)
+            refreshControl.endRefreshing()
         }
     }
 
@@ -187,22 +174,36 @@ extension MoviesViewController {
             startLoading()
 
             do {
-                try await viewModel.fetchMovies()
+                await viewModel.fetchMovies()
 
                 tableView.reloadData()
                 updateUIState()
-
-            } catch {
-                zeroStateView.message =
-                    "Something went wrong."
-
-                tableView.isHidden = true
-                zeroStateView.isHidden = false
             }
 
             stopLoading()
         }
     }
+    
+    private func setupNetworkListener() {
+        NetworkMonitor.shared.onConnectionRestored = { [weak self] in
+            guard let self else { return }
+            self.handleConnectionRestored()
+        }
+    }
+    
+    @MainActor
+    private func handleConnectionRestored() {
+        let hasNoData = viewModel.movies.isEmpty
+
+        guard hasNoData else {
+            return
+        }
+
+        print("🌐 Connection restored → retrying fetch")
+        Task {
+            await viewModel.fetchMovies(refresh: true)
+        }
+    }   
 }
 
 //MARK: - UITableViewDataSource
@@ -233,7 +234,6 @@ extension MoviesViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension MoviesViewController: UITableViewDelegate {
-
     func tableView(
         _ tableView:
             UITableView,
@@ -247,12 +247,13 @@ extension MoviesViewController: UITableViewDelegate {
                 at:
                     indexPath.row
             )
-
-        coordinator?
+        guard let coordinator = coordinator else { return }
+        coordinator
             .showDetails(
                 movieId:
                     movie.id
             )
+        
     }
 
     func tableView(
@@ -276,11 +277,46 @@ extension MoviesViewController: UITableViewDelegate {
         }
 
         Task {
-            try await viewModel
+            await viewModel
                 .fetchMovies()
 
             tableView
                 .reloadData()
+        }
+    }
+}
+//MARK: - Render state logic.
+extension MoviesViewController {
+    private func render(state: ViewState) {
+        
+        switch state {
+            
+        case .idle:
+            break
+            
+        case .loading:
+            loadingIndicator.startAnimating()
+            tableView.isHidden = true
+            zeroStateView.isHidden = true
+            
+        case .loaded:
+            loadingIndicator.stopAnimating()
+            tableView.isHidden = false
+            zeroStateView.isHidden = true
+            
+        case .empty(let message):
+            loadingIndicator.stopAnimating()
+            tableView.isHidden = true
+            
+            zeroStateView.message = message
+            zeroStateView.isHidden = false
+            
+        case .error(let message):
+            loadingIndicator.stopAnimating()
+            tableView.isHidden = true
+            
+            zeroStateView.message = message
+            zeroStateView.isHidden = false
         }
     }
 }

@@ -38,7 +38,7 @@ final class MovieTableViewCell: UITableViewCell {
     func setup(
         movie: MovieEntity,
         imageUseCase:
-            DownloadImageUseCase
+            DownloadImageUseCaseProtocol
     ) {
 
         movieTitleLabel.text =

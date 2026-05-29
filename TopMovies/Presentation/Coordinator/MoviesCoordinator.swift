@@ -29,11 +29,10 @@ final class MoviesCoordinator: @MainActor Coordinator {
         )
 
         let vc = MoviesViewController(
-            viewModel: vm
+            viewModel: vm,
+            coordinator: self
         )
-
-        vc.coordinator = self
-
+        
         navigationController.viewControllers = [vc]
 
         navigationController
@@ -47,9 +46,30 @@ final class MoviesCoordinator: @MainActor Coordinator {
             )
     }
 
+    @MainActor
     func showDetails(
         movieId: Int
     ) {
-        //
+        let useCase =
+            FetchMovieDetailsUseCase(
+                repository: container.makeMoviesRepository()
+            )
+
+        let vm =
+            MovieDetailsViewModel(
+                movieId: movieId,
+                useCase: useCase,
+                imageRepo: container.makeDownloadImage()
+            )
+        let vc = MovieDetailsViewController(
+            viewModel: vm,
+            coordinator: self
+        )
+        
+        navigationController
+            .pushViewController(
+                vc,
+                animated: true
+            )
     }
 }
