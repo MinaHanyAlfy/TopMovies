@@ -19,6 +19,8 @@ final class MovieTableViewCell: UITableViewCell {
         super.awakeFromNib()
 
         configureUI()
+        movieTitleLabel.isAccessibilityElement = true
+        movieTitleLabel.accessibilityIdentifier = "movie_title_label"
     }
 
     private func configureUI() {

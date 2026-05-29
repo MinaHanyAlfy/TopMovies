@@ -88,6 +88,7 @@ extension MoviesViewController {
         tableView.dataSource = self
         tableView.rowHeight = 140
         tableView.separatorStyle = .none
+        tableView.accessibilityIdentifier = "movies_table"
 
         tableView.registerCell(tableViewCell: MovieTableViewCell.self)
 

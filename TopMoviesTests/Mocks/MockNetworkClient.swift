@@ -7,6 +7,7 @@
 
 import Foundation
 @testable import TopMovies
+import UIKit
 
 final class MockNetworkClient: NetworkClientProtocol {
     var mockResponse: Any?
@@ -32,11 +33,17 @@ final class MockNetworkClient: NetworkClientProtocol {
     func downloadImage(
         from urlString: String
     ) async throws -> Data {
-
         if shouldThrowError {
             throw NetworkError.invalidUrl
         }
-
-        return Data("fake-image".utf8)
+        
+        let renderer = UIGraphicsImageRenderer(
+            size: CGSize(width: 1, height: 1)
+        )
+        let image = renderer.image { ctx in
+            UIColor.red.setFill()
+            ctx.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        }
+        return image.pngData()!
     }
 }
