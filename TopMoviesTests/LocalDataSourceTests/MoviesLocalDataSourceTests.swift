@@ -87,7 +87,7 @@ extension MoviesLocalDataSourceTests {
         )
         
         let upcomingMovie = MovieEntity(
-            id: 1,
+            id: 2,
             adult: false,
             originalTitle: "Superman",
             posterPath: "/jpg",
@@ -170,7 +170,7 @@ extension MoviesLocalDataSourceTests {
 
         XCTAssertEqual(
             result.first?.title,
-            "New"
+            "NEW"
         )
     }
     
